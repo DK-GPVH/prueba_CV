@@ -24,7 +24,7 @@ function App() {
 
       <div>
         <main>
-          <div className="bg-gray-200 md:ml-64 ">
+          <div className="bg-white md:ml-64 ">
             <Routes>
               <Route path="/" element={<Inicio />} />
 
