@@ -1,8 +1,8 @@
 {
-  "homepage": "http://SaulLudena.github.io/CV-Dashboard-admin",
   "name": "siru",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://saulludena.github.io/CV-Dashboard-admin",
   "dependencies": {
     "@headlessui/react": "^1.7.2",
     "@material-tailwind/react": "^1.2.4",
@@ -24,8 +24,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "set PORT=3051 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
