@@ -1,4 +1,5 @@
 import React from "react";
+import { FaTrash } from "react-icons/fa";
 import { TiDelete } from "react-icons/ti";
 
 
@@ -6,7 +7,7 @@ const TablaFactura = () => {
     return (
 
         <div className="overflow-x-auto rounded-lg">
-        <table className="table w-full rounded-xl ">
+        <table className="table w-full rounded-xl">
        
           <thead className="bg-[#2F9B86] border border-[#2F9B86]">
             <tr>
@@ -23,7 +24,7 @@ const TablaFactura = () => {
           </thead>
           <tbody className="bg-white text-center border">
          
-            <tr className="h-10">
+            <tr className="h-10 border-b-2 border-gray-300">
               <th className="text-xs text-center">1</th>
               <td className="text-xs text-center">1</td>
               <td className="text-xs">producto</td>
@@ -34,14 +35,14 @@ const TablaFactura = () => {
               <td className="text-xs text-center">1.00</td>
               
               <td className="text-xs text-center">
-                <button className="text-center">
-                  <TiDelete />
+                <button className="text-center text-red-500">
+                  <FaTrash/>
                   </button> 
               </td>
            
             </tr>
 
-            <tr className="h-10">
+            <tr className="h-10 border-b-2 border-gray-300">
               <th className="text-xs text-center">1</th>
               <td className="text-xs text-center">1</td>
               <td className="text-xs">producto</td>
@@ -52,8 +53,8 @@ const TablaFactura = () => {
               <td className="text-xs text-center">1.00</td>
               
               <td className="text-xs text-center">
-                <button className="text-center">
-                  <TiDelete />
+                <button className="text-center text-red-500">
+                  <FaTrash />
                   </button> 
               </td>
            

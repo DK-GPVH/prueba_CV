@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button } from '@material-tailwind/react'
 import { CgInsertAfterR } from 'react-icons/cg'
-
+import { FaFolderPlus } from 'react-icons/fa'
 import FacturaSearch from '../../../components//user/factura/FacturaSearch'
 import TablaFactura from '../../../components/user/factura/TablaFactura'
 import TipoPago from '../../../components/user/factura/TipoPago'
@@ -64,21 +64,22 @@ export default function Factura() {
 
               <FacturaSearch></FacturaSearch>
 
-              <div className="col-span-full sm:col-span-2">
-                <label className="text-sm ">Agregar Servicios o Productos</label>
-                <Button className=" bg-[#2F9B86] px-[45%] w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 border-gray-700 text-gray-200">
-                  <CgInsertAfterR className="w-4 h-4 " />
-                </Button>
+              <div className="col-span-full lg:col-span-2">
+                <label className="text-sm">Productos o servicios</label>
+                <span className='w-full'>
+                  <button className='flex justify-center w-full bg-[#2F9B86] text-white p-2 rounded-lg flex-wrap'>
+                  <FaFolderPlus className='my-auto text-2xl'/>
+                  <span className='mx-2'>Agregar productos o servicios</span> 
+                  </button>
+                </span>
               </div>
             </div>
           </div>
         </form>
       </div>
 
-      <hr className="min-w-full my-4 bg-black" />
-
       {/*contenido de tabla */}
-      <div className="px-1 pt-4 bg-gray-800 rounded-lg lg:px-6">
+      <div className="px-1 pt-4 bg-gray-800 rounded-lg lg:px-6 mt-2">
         <div className="p-4">
           <TablaFactura />
         </div>
@@ -87,8 +88,9 @@ export default function Factura() {
           <div className="col-span-7 bg-white rounded-lg">
             <div className="m-4">
               <div className="form-group row">
-                <h1 className="text-center col-sm-3 col-form-label">Tipo de Pago</h1>
-                <div className="grid grid-cols-12 gap-4">
+                <h1 className="text-center col-sm-3 col-form-label text-md text-[#2F9B86]">TIPO DE PAGO</h1>
+                <div className="border-t border-[#2F9B86]" />
+                <div className="grid grid-cols-12 gap-4 mt-2">
                   <div className="col-span-6">
                     <div className="flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
                       <input
@@ -139,8 +141,8 @@ export default function Factura() {
           <div className="col-span-5 bg-white rounded-lg">
             <div className="flex flex-wrap mb-4 overflow-hidden lg:-mx-px xl:-mx-full">
               <div className="mx-5">
-                <h1 className="pt-4 text-xs text-gray-700 font-mediun py">RESUMEN</h1>
-                <div className="border-t border-gray-900" />
+                <h1 className="pt-4 text-md text-[#2F9B86] font-mediun py">RESUMEN</h1>
+                <div className="border-t border-[#2F9B86]" />
                 <div className="flex flex-wrap overflow-hidden lg:-mx-px">
                   <div className="w-full overflow-hidden text-right lg:my-px lg:px-px xl:w-1/2">
                     <h1 className="py-3 pr-4 text-xs font-medium text-gray-700">SUB TOTAL</h1>
@@ -149,7 +151,7 @@ export default function Factura() {
                     <input
                       type="text"
                       disabled
-                      className="mt-2 block w-full h-6 rounded-md border-[#2F9B86] shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                      className="mt-2 block w-full h-6 rounded-md bg-gray-200 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                     />
                   </div>
 
@@ -161,7 +163,7 @@ export default function Factura() {
                     <input
                       type="text"
                       disabled
-                      className="mt-2 block w-full h-6 rounded-md border-[#2F9B86] shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                      className="mt-2 block w-full h-6 rounded-md bg-gray-200 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                     />
                   </div>
 
@@ -173,7 +175,7 @@ export default function Factura() {
                     <input
                       type="text"
                       disabled
-                      className="mt-2 block w-full h-6 rounded-md border-[#2F9B86] shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                      className="mt-2 block w-full h-6 rounded-md bg-gray-200 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                     />
                   </div>
 
@@ -185,7 +187,7 @@ export default function Factura() {
                     <input
                       type="text"
                       disabled
-                      className="mt-2 block w-full h-6 rounded-md border-[#2F9B86] shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                      className="mt-2 block w-full h-6 rounded-md bg-gray-200 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                     />
                   </div>
 
@@ -205,8 +207,19 @@ export default function Factura() {
             </div>
           </div>
         </div>
+        <div className='grid grid-cols-12 pt-4'>
+            <div className='col-span-12 mx-2 p-1 lg:col-span-3 lg:col-start-10'>
+              <button className='text-white  bg-red-600 rounded-md py-2 px-6 font-mediun font-bold mx-4'>GUARDAR CAMBIOS</button>
+            </div>
+          </div>
       </div>
-
+      <div className="px-1 lg:px-6 mt-4">
+        <div className='flex justify-center flex-wrap'>
+          <button className='bg-red-600 rounded-md py-4 px-6 my-2 mx-6 text-white font-bold'>Vista preliminar</button>
+          <button className='bg-[#2F9B86]  rounded-md py-4 px-6 m-2 mx-6 text-white font-bold'>Emitir Boleta</button>
+          <button className='bg-white border-2 border-[#2F9B86] rounded-md py-4 px-6 m-2 mx-6 font-bold'>Cancelar</button>
+        </div>
+      </div>
       <Button>
         <pru />
       </Button>
