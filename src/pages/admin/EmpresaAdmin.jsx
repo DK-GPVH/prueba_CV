@@ -1,71 +1,164 @@
-import { Button, CardBody, CardHeader } from '@material-tailwind/react'
-import { Card } from 'flowbite-react'
+import { Button, Input } from '@material-tailwind/react'
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-
+import { HiUserAdd } from 'react-icons/hi'
+import { AiFillEdit, AiOutlineMinusCircle } from 'react-icons/ai'
+import { FiDelete } from 'react-icons/fi'
+import DataTable from 'react-data-table-component'
+import { Dialog, Transition } from '@headlessui/react'
+import { useState, Fragment } from 'react'
 export default function Empresa() {
+  const columns = [
+    {
+      name: 'Código',
+      selector: (row) => row.id,
+      sortable: true,
+    },
+    {
+      name: 'RUC',
+      selector: (row) => row.RUC,
+      sortable: true,
+    },
+    {
+      name: 'Razón social',
+      selector: (row) => row.RazSoc,
+      sortable: true,
+    },
+    {
+      name: 'Estado',
+      selector: (row) => row.Estado,
+      sortable: true,
+    },
+    {
+      name: 'Acciones',
+      selector: (row) => row.Acciones,
+    },
+  ]
+
+  const data = [
+    {
+      id: 'EMP-1',
+      RUC: '20515290142',
+      RazSoc: 'Clinica Medica Cayetano Heredia',
+      Estado: 'Activo',
+      Acciones: (
+        <div className="flex gap-3">
+          <AiFillEdit color="#7E56DA" className="cursor-pointer" size="25px" />
+          <AiOutlineMinusCircle color="#7E56DA" className="cursor-pointer" size="25px" />
+          <FiDelete color="#DA5656" className="cursor-pointer" size="25px" />
+        </div>
+      ),
+    },
+    {
+      id: 'EMP-2',
+      RUC: '20515290142',
+      RazSoc: 'Clinica Medica Cayetano Heredia',
+      Estado: 'Activo',
+      Acciones: (
+        <div className="flex gap-3">
+          <AiFillEdit color="#7E56DA" className="cursor-pointer" size="25px" />
+          <AiOutlineMinusCircle color="#7E56DA" className="cursor-pointer" size="25px" />
+          <FiDelete color="#DA5656" className="cursor-pointer" size="25px" />
+        </div>
+      ),
+    },
+    {
+      id: 'EMP-3',
+      RUC: '20515290142',
+      RazSoc: 'Clinica Medica Cayetano Heredia',
+      Estado: 'Activo',
+      Acciones: (
+        <div className="flex gap-3">
+          <AiFillEdit color="#7E56DA" className="cursor-pointer" size="25px" />
+          <AiOutlineMinusCircle color="#7E56DA" className="cursor-pointer" size="25px" />
+          <FiDelete color="#DA5656" className="cursor-pointer" size="25px" />
+        </div>
+      ),
+    },
+    {
+      id: 'EMP-4',
+      RUC: '20515290142',
+      RazSoc: 'Clinica Medica Cayetano Heredia',
+      Estado: 'Activo',
+      Acciones: (
+        <div className="flex gap-3">
+          <AiFillEdit color="#7E56DA" className="cursor-pointer" size="25px" />
+          <AiOutlineMinusCircle color="#7E56DA" className="cursor-pointer" size="25px" />
+          <FiDelete color="#DA5656" className="cursor-pointer" size="25px" />
+        </div>
+      ),
+    },
+  ]
+  let [isOpen, setIsOpen] = useState(false)
+  function closeModal() {
+    setIsOpen(false)
+  }
+  function openModal() {
+    setIsOpen(true)
+  }
   return (
-   <>
-   <div className='p-8 ml-16 mt-16'>
-    <h1 className='text-2xl font-extrabold font-sans mb-8'>Configuración-Empresa</h1>
-    <span className='font-semibold'>Datos Generales</span>
-    <h4>Información básica de tu Empresa</h4>
-   </div>
-   <section class="text-gray-500 body-font">
-  <div class="container px-20 py-10 m-auto flex flex-wrap">
-    <div class="flex flex-wrap w-full">
-      <div class="p-4 lg:w-1/2  md:w-full">
-        <div class="flex border-2 rounded-lg border-gray-900 border-opacity-50 p-4  sm:flex-row flex-col">
-          
-          {/* Icono omitido <div class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-8 h-8" viewBox="0 0 24 24">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-            </svg>
-          </div> */}
-          <div class="flex-grow">
-            <h2 class="text-gray-900 text-lg title-font font-medium mb-3 border-b-2 border-gray-500">Registrar Empresas</h2>
-            <p class="leading-relaxed text-base mb-9">Texto</p>
-            <Button className='bg-[#2F9B86]'>
-              <NavLink to="/registrarempresa" className=' text-white inline-flex items-center'>
-                INGRESAR
-                
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-              </NavLink>
-              </Button>
-
-
+    <div className="p-4">
+      <h1>Configuración - Empresa</h1>
+      <div className="p-6">
+        <div className="flex justify-between">
+          <div className="w-2/4">
+            <Input size="lg" label="Buscar por nombre de empresa" />
+          </div>
+          <div>
+            <Button className="flex bg-[#2F9B86]" onClick={openModal}>
+              <HiUserAdd className="mr-2" /> Nueva empresa
+            </Button>
           </div>
         </div>
-      </div>
-      <div class="p-4 lg:w-1/2 md:w-full">
-        <div class="flex border-2 rounded-lg border-gray-900 border-opacity-50 p-4 sm:flex-row flex-col">
-          {/* Icono omitido <div class="w-16 h-16 sm:mr-8 sm:mb-0 mb-4 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
-              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
-          </div> */}
-          <div class="flex-grow">
-            <h2 class="text-gray-900 text-lg title-font font-medium mb-3 border-b-2 border-gray-500">Listas de Empresas</h2>
-            <p class="leading-relaxed text-base mb-9">Texto</p>
-            <Button className='bg-[#2F9B86]' >
-              <NavLink to="/listasempresa" className=' text-white inline-flex items-center'>
-                INGRESAR
-                
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-              </NavLink>
-              </Button>
-
-          </div>
+        <div className="mt-6 border-2 border-gray-200 rounded-md">
+          <DataTable columns={columns} data={data} pagination highlightOnHover />
         </div>
       </div>
+      <Transition appear show={isOpen} as={Fragment}>
+        <Dialog as="div" className="relative z-10" onClose={closeModal}>
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-black bg-opacity-25" />
+          </Transition.Child>
+
+          <div className="fixed inset-0 overflow-y-auto">
+            <div className="flex items-center justify-center min-h-full p-4 text-center">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
+              >
+                <Dialog.Panel className="w-full max-w-md p-6 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl">
+                  <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-900">
+                    Registra tu empresa
+                  </Dialog.Title>
+                  <div className="mt-2"></div>
+
+                  <div className="mt-4">
+                    <button
+                      type="button"
+                      className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                      onClick={closeModal}
+                    >
+                      Got it, thanks!
+                    </button>
+                  </div>
+                </Dialog.Panel>
+              </Transition.Child>
+            </div>
+          </div>
+        </Dialog>
+      </Transition>
     </div>
-  </div>
-</section>
-   </>
   )
 }

@@ -16,7 +16,8 @@ import RegistrarEmpresa from './pages/admin/Empresa/RegistrarEmpresa'
 import ListasEmpresa from './pages/admin/Empresa/ListasEmpresa'
 import Factura from './pages/user/ComprobantesPagos/Factura'
 import Boleta from './pages/user/ComprobantesPagos/Boleta'
-
+import NotaDeCredito from './pages/user/ComprobantesPagos/NotaDeCredito'
+import NotaDeDedito from './pages/user/ComprobantesPagos/NotaDeDebito'
 function App() {
   return (
     <div>
@@ -41,6 +42,8 @@ function App() {
               {/*carpeta usuario */}
               <Route path="/factura" element={<Factura />} />
               <Route path="/boleta" element={<Boleta />} />
+              <Route path="/ncredito" element={<NotaDeCredito />} />
+              <Route path="/ndebito" element={<NotaDeDedito />} />
             </Routes>
           </div>
         </main>
