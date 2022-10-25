@@ -18,6 +18,7 @@ import Factura from './pages/user/ComprobantesPagos/Factura'
 import Boleta from './pages/user/ComprobantesPagos/Boleta'
 import NotaDeCredito from './pages/user/ComprobantesPagos/NotaDeCredito'
 import NotaDeDedito from './pages/user/ComprobantesPagos/NotaDeDebito'
+import Login from './pages/Login.jsx'
 function App() {
   return (
     <div>
