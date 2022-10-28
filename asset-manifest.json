@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/prueba_CV/static/css/main.e1c8d631.css",
-    "main.js": "/prueba_CV/static/js/main.a0b817a2.js",
-    "static/media/green_environment.png": "/prueba_CV/static/media/green_environment.6653bca213a941b70a8d.png",
-    "index.html": "/prueba_CV/index.html",
-    "main.e1c8d631.css.map": "/prueba_CV/static/css/main.e1c8d631.css.map",
-    "main.a0b817a2.js.map": "/prueba_CV/static/js/main.a0b817a2.js.map"
+    "main.css": "/CV-Dashboard-admin/static/css/main.1a6d0cbf.css",
+    "main.js": "/CV-Dashboard-admin/static/js/main.2dd5ac61.js",
+    "static/media/green_environment.png": "/CV-Dashboard-admin/static/media/green_environment.6653bca213a941b70a8d.png",
+    "index.html": "/CV-Dashboard-admin/index.html",
+    "main.1a6d0cbf.css.map": "/CV-Dashboard-admin/static/css/main.1a6d0cbf.css.map",
+    "main.2dd5ac61.js.map": "/CV-Dashboard-admin/static/js/main.2dd5ac61.js.map"
   },
   "entrypoints": [
-    "static/css/main.e1c8d631.css",
-    "static/js/main.a0b817a2.js"
+    "static/css/main.1a6d0cbf.css",
+    "static/js/main.2dd5ac61.js"
   ]
 }
