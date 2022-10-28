@@ -65,9 +65,9 @@ export default function NavbarUsuario() {
                   <NavLink
                     end
                     to="/perfil"
-                    className="block p-1 truncate transition duration-150 rounded-md  hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
+                    className="block p-1 truncate transition duration-150 rounded-md hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
                   >
-                    <span className="font-medium duration-200  text-md lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                    <span className="font-medium duration-200 text-md lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                       Perfil
                     </span>
                   </NavLink>
@@ -82,7 +82,7 @@ export default function NavbarUsuario() {
                   <NavLink
                     end
                     to="/"
-                    className="block p-1 truncate transition duration-150 rounded-md  hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
+                    className="block p-1 truncate transition duration-150 rounded-md hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
                   >
                     <span className="font-medium duration-200 text-md lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                       Configuracion
@@ -99,7 +99,7 @@ export default function NavbarUsuario() {
                   <NavLink
                     end
                     to="/"
-                    className="block p-1 truncate transition duration-150 rounded-md  hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
+                    className="block p-1 truncate transition duration-150 rounded-md hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
                   >
                     <span className="font-medium duration-200 text-md lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                       Salir

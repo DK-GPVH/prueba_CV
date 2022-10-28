@@ -4,9 +4,9 @@ import { getDates } from "./helpers/getDates";
 import WriteDNI from "./WriteDNI";
 import WriteRUC from "./WriteRUC";
 
-export default function DatesSearch() {
+export default function DatesSearch({onDocumento}) {
         const [DatesInput, setDatesInput] = useState({});
-        const [TipoDocumento, setTipoDocumento] = useState("dni");
+        const [TipoDocumento, setTipoDocumento] = useState("ruc");
         const [Dates,setDates]=useState({});
         const selectDocument = ({target})=>{
             setTipoDocumento(target.value);
@@ -22,9 +22,12 @@ export default function DatesSearch() {
     
     <div className="col-span-full sm:col-span-2">
             <label className="text-sm">Tipo de Documento</label>
-            <select className="w-full text-gray-900 rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700" onChange={selectDocument}>
-                <option value="dni">DNI</option>
+            <select className="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 dark:border-gray-700 text-gray-900" onChange={selectDocument}>
                 <option value="ruc">RUC</option>
+               {
+                onDocumento === "boleta" &&  <option value="dni">DNI</option>
+               } 
+                
             </select>
         </div>
 
@@ -45,7 +48,7 @@ export default function DatesSearch() {
                 </span>
                 <input
                     type="text"
-                    className="w-full text-gray-900 border-gray-700 rounded-r-md focus:ring focus:ring-opacity-75 focus:ring-violet-400"
+                    className="w-full rounded-r-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 border-gray-700 text-gray-900"
                     placeholder=""
                     value={Dates.message?"Documento invalido":Dates.ruc?Dates.razonSocial:Dates.dni?Dates.nombres+" "+Dates.apellidoPaterno+" "+Dates.apellidoMaterno:""}
                     readOnly
@@ -58,7 +61,7 @@ export default function DatesSearch() {
             <input  
             type="text"
             placeholder={TipoDocumento==="dni"?"Ingrese su direccion":""} 
-            className="w-full text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400"
+            className="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 border-gray-700 text-gray-900"
             value={Dates.message?"Documento invalido":Dates.ruc&&Dates.direccion}
             />
         </div>
@@ -68,7 +71,7 @@ export default function DatesSearch() {
             <input  
             type="number" 
             placeholder={TipoDocumento==="dni"?"Ingrese su ubigeo":""} 
-            className="w-full text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400"
+            className="w-full rounded-md focus:ring focus:ring-opacity-75 focus:ring-violet-400 border-gray-700 text-gray-900"
             value={Dates.message?0:Dates.ruc&&Dates.ubigeo}
             />
         </div>

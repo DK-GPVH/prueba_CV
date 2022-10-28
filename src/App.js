@@ -12,13 +12,12 @@ import ReportesAdmin from './pages/admin/ReportesAdmin'
 import ConfiguracionAdmin from './pages/admin/ConfiguracionAdmin'
 
 /*carpeta admin - Empresa */
-import RegistrarEmpresa from './pages/admin/Empresa/RegistrarEmpresa'
-import ListasEmpresa from './pages/admin/Empresa/ListasEmpresa'
+
 import Factura from './pages/user/ComprobantesPagos/Factura'
 import Boleta from './pages/user/ComprobantesPagos/Boleta'
 import NotaDeCredito from './pages/user/ComprobantesPagos/NotaDeCredito'
 import NotaDeDedito from './pages/user/ComprobantesPagos/NotaDeDebito'
-import Login from './pages/Login.jsx'
+import ProductosYServicios from './pages/user/ProductosYServicios'
 function App() {
   return (
     <div>
@@ -34,11 +33,10 @@ function App() {
               <Route path="/empresa" element={<EmpresaAdmin />} />
               <Route path="/usuario" element={<UsuariosAdmin />} />
               <Route path="/reportes" element={<ReportesAdmin />} />
+              <Route path="/productosYservicios" element={<ProductosYServicios />} />
               <Route path="/configuracion" element={<ConfiguracionAdmin />} />
 
               {/*admin paginas secundarias*/}
-              <Route path="/registrarempresa" element={<RegistrarEmpresa />} />
-              <Route path="/listasempresa" element={<ListasEmpresa />} />
 
               {/*carpeta usuario */}
               <Route path="/factura" element={<Factura />} />

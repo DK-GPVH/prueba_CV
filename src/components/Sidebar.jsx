@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import Navbar from './Navbar'
 import ImgLogo from '../assets/img/logo-sidebar.png'
 
 /*inicio */
-import { BsFileCodeFill, BsFillBookmarkStarFill, BsFillPieChartFill } from 'react-icons/bs'
+import { BsFileCodeFill, BsFillBookmarkStarFill, BsFillPieChartFill, BsBox } from 'react-icons/bs'
 
 /* empresa*/
 import { AiFillBank } from 'react-icons/ai'
@@ -91,6 +91,17 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
               </NavLink>
             </div>
 
+            {/*productos y servicios*/}
+            <div className="flex-col mb-4 ">
+              <NavLink
+                to="/productosYservicios"
+                className="flex px-2 py-3 text-white rounded-lg hover:text-black hover:bg-white"
+              >
+                <BsBox className="text-xl" />
+                <span className="ml-4 text-sm font-semibold">Productos y servicios</span>
+              </NavLink>
+            </div>
+
             {/*configuracion */}
             <div className="flex-col mb-4 ">
               <NavLink
@@ -115,6 +126,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
                       onClick={(e) => {
                         e.preventDefault()
                         sidebarExpanded ? handleClick() : setSidebarExpanded(true)
+                        console.log('haz dado click aqui')
                       }}
                     >
                       <div className="flex items-center px-2 py-3 mb-4 text-white rounded-lg hover:text-black hover:bg-white">
@@ -134,12 +146,12 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
                     </a>
 
                     <div className="text-white bg-black rounded-lg lg:hidden lg:sidebar-expanded:block 2xl:block">
-                      <ul className={`pl-9 mt-1 ${!open && 'hidden'}`}>
-                        <li className="mb-1 last:mb-0">
+                      <ul className={`mt-1 ${!open && 'hidden'}`}>
+                        <li className="mb-1 left-1 last:mb-0">
                           <NavLink
                             end
                             to="/factura"
-                            className="block p-1 truncate transition duration-150 rounded-md hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
+                            className="block px-5 py-2 truncate transition duration-150 rounded-md hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
                           >
                             <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                               Emitir Factura
@@ -150,7 +162,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <NavLink
                             end
                             to="/boleta"
-                            className="block p-1 truncate transition duration-150 rounded-md hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
+                            className="block px-5 py-2 truncate transition duration-150 rounded-md hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
                           >
                             <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                               Emitir Boleta
@@ -162,7 +174,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <NavLink
                             end
                             to="/ncredito"
-                            className="block p-1 truncate transition duration-150 rounded-md hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
+                            className="block px-5 py-2 truncate transition duration-150 rounded-md hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
                           >
                             <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                               Emitir nota de Crédito
@@ -173,7 +185,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <NavLink
                             end
                             to="/ndebito"
-                            className="block p-1 truncate transition duration-150 rounded-md hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
+                            className="block px-5 py-2 truncate transition duration-150 rounded-md hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
                           >
                             <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                               Emitir nota de Débito
@@ -185,7 +197,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <NavLink
                             end
                             to="/nventa"
-                            className="block p-1 truncate transition duration-150 rounded-md hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
+                            className="block px-5 py-2 truncate transition duration-150 rounded-md hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
                           >
                             <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                               Emitir nota de venta
