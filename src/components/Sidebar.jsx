@@ -60,32 +60,32 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
           <div className="flex flex-col" onClick={() => setOpenSidebar('-left-64')}>
             {/*inicio */}
-            <div className="flex-col mb-4">
-              <NavLink to="/" className="flex px-2 py-3 text-white rounded-lg hover:text-black hover:bg-white">
+            <div className="flex-col px-2 py-3 mb-4 text-white rounded-lg hover:text-black hover:bg-white">
+              <NavLink to="/" className="flex">
                 <BsFillBookmarkStarFill className="text-xl" />
                 <span className="ml-4 text-sm font-semibold">Inicio</span>
               </NavLink>
             </div>
 
             {/*empresa */}
-            <div className="flex-col mb-4 ">
-              <NavLink to="/empresa" className="flex px-2 py-3 text-white rounded-lg hover:text-black hover:bg-white">
+            <div className="flex-col px-2 py-3 mb-4 text-white rounded-lg hover:text-black hover:bg-white">
+              <NavLink to="/empresa" className="flex">
                 <AiFillBank className="text-xl" />
                 <span className="ml-4 text-sm font-semibold">Empresa</span>
               </NavLink>
             </div>
 
             {/*reporte */}
-            <div className="flex-col mb-4 ">
-              <NavLink to="/reportes" className="flex px-2 py-3 text-white rounded-lg hover:text-black hover:bg-white">
+            <div className="flex-col px-2 py-3 mb-4 text-white rounded-lg hover:text-black hover:bg-white">
+              <NavLink to="/reportes" className="flex">
                 <BsBarChartFill className="text-xl" />
                 <span className="ml-4 text-sm font-semibold">Reportes</span>
               </NavLink>
             </div>
 
             {/*usuarios */}
-            <div className="flex-col mb-4 ">
-              <NavLink to="/usuario" className="flex px-2 py-3 text-white rounded-lg hover:text-black hover:bg-white">
+            <div className="flex-col px-2 py-3 mb-4 text-white rounded-lg hover:text-black hover:bg-white">
+              <NavLink to="/usuario" className="flex">
                 <FaUserFriends className="text-xl" />
                 <span className="ml-4 text-sm font-semibold">Usuarios</span>
               </NavLink>
@@ -103,11 +103,8 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
             </div>
 
             {/*configuracion */}
-            <div className="flex-col mb-4 ">
-              <NavLink
-                to="/configuracion"
-                className="flex px-2 py-3 text-white rounded-lg hover:text-black hover:bg-white"
-              >
+            <div className="flex-col px-2 py-3 mb-4 text-white rounded-lg hover:text-black hover:bg-white">
+              <NavLink to="/configuracion" className="flex">
                 <BsFillGearFill className="text-xl" />
                 <span className="ml-4 text-sm font-semibold">Configuración</span>
               </NavLink>
@@ -151,9 +148,9 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <NavLink
                             end
                             to="/factura"
-                            className="block px-5 py-2 truncate transition duration-150 rounded-md hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
+                            className="block truncate transition duration-150 text-slate-400 hover:text-slate-200"
                           >
-                            <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
+                            <span className=" text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                               Emitir Factura
                             </span>
                           </NavLink>
@@ -162,7 +159,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <NavLink
                             end
                             to="/boleta"
-                            className="block px-5 py-2 truncate transition duration-150 rounded-md hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
+                            className="block truncate transition duration-150 text-slate-400 hover:text-slate-200"
                           >
                             <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                               Emitir Boleta
@@ -174,7 +171,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <NavLink
                             end
                             to="/ncredito"
-                            className="block px-5 py-2 truncate transition duration-150 rounded-md hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
+                            className="block truncate transition duration-150 text-slate-400 hover:text-slate-200"
                           >
                             <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                               Emitir nota de Crédito
@@ -185,7 +182,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <NavLink
                             end
                             to="/ndebito"
-                            className="block px-5 py-2 truncate transition duration-150 rounded-md hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
+                            className="block truncate transition duration-150 text-slate-400 hover:text-slate-200"
                           >
                             <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                               Emitir nota de Débito
@@ -197,7 +194,7 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
                           <NavLink
                             end
                             to="/nventa"
-                            className="block px-5 py-2 truncate transition duration-150 rounded-md hover:bg-red-50 hover:text-black text-slate-400 hover:text-slate-200"
+                            className="block truncate transition duration-150 text-slate-400 hover:text-slate-200"
                           >
                             <span className="text-sm font-medium duration-200 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                               Emitir nota de venta
